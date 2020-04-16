@@ -23,10 +23,10 @@ Git.Repository.open(FILESYSTEM_LOCATION)
       if (++count >= 5) return
       const message = commit.message().substr(0,72)
       const markdownLinkToSha = `[${message.trim()}](${HUB_LOCATION}/${REPO}/commits/${commit.sha()})`
-      const author = commit.author()
-      const date = commit.date().toLocaleString()
+      const author = commit.author().name()
+      // const date = commit.date().toLocaleString()
       // Show the commit sha.
-      console.log(`${markdownLinkToSha} by ${author} on ${date}`);
+      console.log(`${author}: ${markdownLinkToSha}`);
     });
 
     // Start emitting events.
