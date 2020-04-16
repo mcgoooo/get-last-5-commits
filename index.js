@@ -1,7 +1,7 @@
 var Git = require("nodegit");
 const REPO = process.env.REPO
 const FILESYSTEM_LOCATION = process.env.FILESYSTEM_LOCATION
-const HUB_LOCATION = "https://github.com/"
+const HUB_LOCATION = "https://github.com"
 
 // Open the repository directory.
 Git.Repository.open(FILESYSTEM_LOCATION)
