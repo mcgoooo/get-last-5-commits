@@ -22,7 +22,7 @@ Git.Repository.open(FILESYSTEM_LOCATION)
       // Disregard commits past 5.
       if (++count >= 5) return
       const message = commit.message().substr(0,72)
-      const markdownLinkToSha = `[${message}](${HUB_LOCATION}/${REPO}/commits/${commit.sha()})`
+      const markdownLinkToSha = `[${message.trim()}](${HUB_LOCATION}/${REPO}/commits/${commit.sha()})`
       const author = commit.author()
       const date = commit.date().toLocaleString()
       // Show the commit sha.
