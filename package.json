@@ -12,7 +12,7 @@
     "nodegit": "^0.26.5"
   },
   "scripts": {
-      "start:dev" : "export $(xargs <.env.development) && yarn start",
+      "start:dev" : "export $(xargs <.env.development) && node index.js",
       "start": "node index.js"
   }
 }
