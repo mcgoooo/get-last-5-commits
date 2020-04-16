@@ -12,6 +12,7 @@ yarn
 yarn start:dev
 
 edit `.env.development` to point to the git repo,
+and also the full path to the git repo on the filesystem, checked out on the correct branch
 and where the repo is on github,
 it will link to commits that are already on github
 ```
@@ -27,3 +28,6 @@ which ruins the output, you may need to run the full command from `yarn:start:de
 this is the first time i have came across this problem..
 
 if anyone understands the better way to deal with this, pelase shout,it works enough for me
+
+# what it does
+![in action](https://user-images.githubusercontent.com/248888/79405680-f8877f80-7f8c-11ea-97f2-1dea73702c33.gif)
