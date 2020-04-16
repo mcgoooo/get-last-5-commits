@@ -4,11 +4,13 @@ const FILESYSTEM_LOCATION = process.env.FILESYSTEM_LOCATION
 const HUB_LOCATION = "https://github.com"
 
 const makeMessage = (commit)  => {
-  const message = commit.message().substr(0,72)
-  const markdownLinkToSha = `[${message.trim().replace(/\n|\r/g, "")}](${HUB_LOCATION}/${REPO}/commits/${commit.sha()})`
+  // 72 characters no new lines
+  const message = commit.message().substr(0,72).replace(/\n|\r/g, "")
+  const webUrl = `${HUB_LOCATION}/${REPO}/commits/${commit.sha()}`
   const author = commit.author().name()
-  // const date = commit.date().toLocaleString()
-  return `${author}: ${markdownLinkToSha}`
+  const date = commit.date().toLocaleDateString()
+
+  return `${author}: ${date} :[${message}](${webUrl})`
 }
 
 const go = async function(){
@@ -18,6 +20,7 @@ const go = async function(){
   const history = masterCommit.history()
   let count = 0
   history.on("commit", function(commit) {
+    // it works and get-last-5 is the name
     if (++count >= 6) return
     console.log(makeMessage(commit));
   });

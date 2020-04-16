@@ -1,8 +1,9 @@
 # get-last-5-commits
 get the last five commits as markdown of a local filesytem git repo
+as an example etc)
 
-the primary usage is to be able to give a markdown lsit to github
-that can be used in various places (from circle ci to a slack notification as an example etc)
+opininated in the sense, that for a ci system, and slack notifications,
+you only need five commits, and i would prefer you work directly off master :D
 
 # install
 
